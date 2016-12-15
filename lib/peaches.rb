@@ -6,4 +6,8 @@ class Peaches
 	def puntaje
 		@puntajeA
 	end
+
+	def generar_operacion
+		"4+5"
+	end
 end
