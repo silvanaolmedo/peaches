@@ -9,13 +9,10 @@ end
 
 post '/' do
 		
-    @valor = params["respuesta"].to_i
-		if @valor ==  9
-			@rta = "Respuesta correcta"	
-			@operacion = peaches.mostrar_operacion
-		else
-			@rta = "Respuesta incorrecta"	
-			@operacion = peaches.mostrar_operacion
-		end
+    @valor = params["respuesta"].to_i		
+		@peaches = Peaches.new
+		@peaches.generar_operacion_fija
+		@peaches.calcular_operacion
+		@rta = @peaches.verificar_respuesta @valor
     erb :peaches
 end
