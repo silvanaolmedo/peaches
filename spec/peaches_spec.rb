@@ -9,6 +9,20 @@ describe "Juego Peaches Math" do
 
 	it "Genera y muestra operacion" do
 		game = Peaches.new
-		expect(game.generar_operacion).to eq("4+5")
+		expect(game.mostrar_operacion).to eq("5+4")
 	end
+        
+     	it "calcular_operacion" do
+             game = Peaches.new
+	     game.generar_operacion_fija
+	     game.calcular_operacion 
+             expect(game.obtener_resultado).to eq(9)
+        end
+	
+	it "Verificar respuesta" do
+  	    game = Peaches.new
+	    game.generar_operacion_fija
+     	    game.calcular_operacion 
+	    expect(game.verificar_respuesta 9).to eq "Respuesta correcta"
+     	end
 end

@@ -10,11 +10,18 @@ Scenario: mostrar puntaje inicial
 
 Scenario: mostrar una suma
 	Given voy a la pantalla con suma
-	Then veo "4+5"
+	Then veo "5+4"
 
 
 Scenario: mostrar input box para ingresar respuesta
 	Given voy a la pantalla con input box
 	When ingreso en respuesta	0
 	Then veo "Respuesta incorrecta"
+
+
+Scenario: mostrar resultado
+	Given voy a la pantalla con una  cuenta
+	When ingreso en respuesta 9
+	Then veo "Respuesta correcta" y genera nueva operacion
+
 

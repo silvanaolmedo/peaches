@@ -38,3 +38,17 @@ Then(/^veo numero (\d+)$/) do |arg1|
 end
 
 
+Given(/^voy a la pantalla con una  cuenta$/) do
+  visit '/'
+end
+
+When(/^ingreso en respuesta (\d+)$/) do |arg1|
+    fill_in("respuesta", :with => arg1)
+	click_button("jugar")
+end
+
+Then(/^veo "(.*?)" y genera nueva operacion$/) do |arg1|
+  last_response.body.should =~ /#{arg1}/m
+end
+
+
