@@ -17,6 +17,9 @@ class Peaches
 		"4+5"
 	end
         def calcular_operacion 
+ 	   @operador1 = 5
+           @operador2 = 4
+           @operacion = 1
            if @operacion == 1 
              @resultado= @operador1 + @operador2
              
