@@ -2,6 +2,10 @@ Given(/^voy a la pantalla inicial$/) do
   visit '/'
 end
 
+Given(/^voy a la pantalla con puntaje$/) do
+  visit '/'
+end
+
 Given(/^voy a la pantalla con suma$/) do
 	visit '/'
 end
