@@ -5,10 +5,19 @@ class Peaches
                 @operador2 = 0
                 @operacion = 1
                 @resultado = 0
-		@puntaje1 = 0               
+		@puntaje1 = 0    
+		@puntaje2 = 0             
+		@limitePuntos = 3
+		@turno =1
 	end
-	def puntaje
+	def puntaje1
 		@puntaje1
+	end
+	def puntaje2
+		@puntaje2
+	end
+	def turno
+		@turno
 	end
 	def generar_operacion
 		@operador1 = rand(100)
@@ -39,12 +48,26 @@ class Peaches
         def verificar_respuesta respuesta
 	   calcular_operacion
            if respuesta == @resultado
-		@puntaje1 += 1
+		if @turno==1
+			@puntaje1 += 1
+		else 
+			@puntaje2 +=1
+		end		
               @devolucion = "Respuesta correcta"
-		
+
            else
+	
              @devolucion = "Respuesta incorrecta"
     	   end
+	if @limitePuntos == @puntaje1 or @limitePuntos == @puntaje2
+		@devolucion= "Ganaste JUGADOR "+@turno.to_s+" !!!!!!! =D"
+	end
+		if @turno==1
+			@turno=2
+		else 
+			@turno=1
+		end
+	return @devolucion
 	end
 
 	def obtener_resultado

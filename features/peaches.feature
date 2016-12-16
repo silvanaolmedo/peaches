@@ -6,7 +6,7 @@ Scenario: portada
 
 Scenario: mostrar puntaje inicial
 	Given voy a la pantalla con puntaje
-	Then veo "Puntaje = 0"
+	Then veo "Puntaje jugador 1 = 0 y Puntaje jugador 2 = 0"
 
 Scenario: mostrar una suma
 	Given voy a la pantalla con suma

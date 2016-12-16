@@ -1,13 +1,13 @@
 <h1> Peaches Math</h1>
 
 <p>
-Puntaje = <%= @puntos%>
+Puntaje jugador 1 = <%= @puntos1%> y Puntaje jugador 2 = <%= @puntos2%>
 </p>
 <p>
 <%= @operacion %>
 
-<%= @resultado%>
-
+<p>
+Jugador <%= @turno %>
 <form method="post" action="/">
 <input type="text" name="respuesta">
 <input type="submit" value="jugar">

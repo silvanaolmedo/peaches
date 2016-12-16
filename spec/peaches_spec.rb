@@ -4,7 +4,7 @@ describe "Juego Peaches Math" do
 
 	it "Ingresa al juego" do
 		game = Peaches.new
-		expect(game.puntaje).to eq(0)
+		expect(game.puntaje1).to eq(0)
 	end
 
 	it "Genera y muestra operacion" do
