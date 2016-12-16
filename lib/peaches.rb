@@ -4,10 +4,11 @@ class Peaches
                 @operador1 = 0
                 @operador2 = 0
                 @operacion = 1
-                @resultado = 0               
+                @resultado = 0
+		@puntaje1 = 0               
 	end
 	def puntaje
-		0
+		@puntaje1
 	end
 	def generar_operacion
 		@operador1 = rand(100)
@@ -21,8 +22,6 @@ class Peaches
 		@operador = "+"
 	end
 	def mostrar_operacion
-		#generar_operacion
-		generar_operacion_fija
 		operacion=@operador1.to_s + @operador + @operador2.to_s
 		return operacion
 	end
@@ -37,16 +36,17 @@ class Peaches
               @resultado= @operador1 * @operador2
 	   end
         end
-	
-
         def verificar_respuesta respuesta
 	   calcular_operacion
            if respuesta == @resultado
+		@puntaje1 += 1
               @devolucion = "Respuesta correcta"
+		
            else
              @devolucion = "Respuesta incorrecta"
     	   end
 	end
+
 	def obtener_resultado
 		@resultado
 	end
