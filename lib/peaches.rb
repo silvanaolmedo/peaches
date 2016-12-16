@@ -1,13 +1,22 @@
 class Peaches
 	def initialize
 		@puntajeA = 0
-	end
-
-	def puntaje
-		@puntajeA
+		@valorA =  0
+		@valorB = 0				
+		@operador = 0			
 	end
 
 	def generar_operacion
-		"4+5"
+		@puntajeA = 0
+		@valorA = rand(100)
+		@valorB = rand(100)				
+		a = ["+","-"]
+		@operador = a[rand(a.size)]
 	end
+	def mostrar_operacion
+		generar_operacion
+		operacion=@valorA.to_s + @operador + @valorB.to_s
+		return operacion
+	end
+
 end
